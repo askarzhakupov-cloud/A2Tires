@@ -8,7 +8,6 @@
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh;font-size:14px}
 
-/* Login */
 .login-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
 .login-box{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:36px 32px;width:100%;max-width:320px;text-align:center}
 .login-logo{font-size:26px;font-weight:700;color:#58a6ff;margin-bottom:6px}
@@ -20,7 +19,6 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
 .login-btn:hover{background:#2ea043}
 .login-err{color:#f85149;font-size:12px;margin-top:8px;min-height:16px}
 
-/* App */
 .app{display:none}
 .hdr{background:#161b22;border-bottom:1px solid #30363d;padding:11px 16px;display:flex;align-items:center;position:sticky;top:0;z-index:100}
 .logo{font-size:15px;font-weight:700;color:#58a6ff}
@@ -31,7 +29,6 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
 .inp{background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#c9d1d9;padding:9px 13px;font-size:14px;outline:none;width:100%;margin-bottom:8px}
 .inp:focus{border-color:#58a6ff}
 .inp::placeholder{color:#484f58}
-
 .filters{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none}
 .filters::-webkit-scrollbar{display:none}
 .pill{padding:5px 11px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid #30363d;background:#0d1117;color:#8b949e;cursor:pointer;white-space:nowrap;user-select:none;flex-shrink:0}
@@ -66,29 +63,35 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
 .s-cbc{color:#8b949e;border-color:#30363d;background:#0d1117}
 .qty-ok{color:#3fb950;font-weight:600;font-size:11px;margin-left:auto;flex-shrink:0}
 .qty-low{color:#d29922;font-weight:600;font-size:11px;margin-left:auto;flex-shrink:0}
-.qty-zero{color:#484f58;font-size:11px;margin-left:auto;flex-shrink:0}
 .min-price{font-size:11px;color:#6e7681;margin-left:5px;flex-shrink:0}
 
-/* Detail panel */
+/* Detail */
 .detail{display:none;background:#0d1117;border-top:1px solid #21262d;padding:8px 14px 10px}
 .detail.open{display:block}
-.d-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:#484f58;margin-bottom:6px}
+.d-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:#484f58;margin-bottom:8px}
 
-/* Supplier detail cards */
-.sup-card{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:9px 11px;margin-bottom:6px}
+/* Supplier card */
+.sup-card{background:#161b22;border:1px solid #21262d;border-radius:8px;margin-bottom:6px;overflow:hidden}
 .sup-card:last-child{margin-bottom:0}
-.sc-top{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+
+/* Sup header */
+.sc-hdr{display:flex;align-items:center;gap:8px;padding:8px 11px;border-bottom:1px solid #21262d}
 .sc-name{font-size:12px;font-weight:600}
-.sc-addr{font-size:11px;color:#8b949e}
-.sc-qty-ok{color:#3fb950;font-weight:700;font-size:13px;margin-left:auto}
-.sc-qty-low{color:#d29922;font-weight:700;font-size:13px;margin-left:auto}
-.sc-qty-zero{color:#484f58;font-size:13px;margin-left:auto}
-.sc-prices{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
-.sc-price-row{display:flex;justify-content:space-between;align-items:baseline;font-size:12px}
-.sc-lbl{color:#8b949e;font-size:11px}
-.sc-val{font-weight:600;color:#c9d1d9}
-.sc-val.kaspi{color:#3fb950}
-.sc-updated{font-size:10px;color:#484f58;margin-top:5px;text-align:right}
+.sc-addr{font-size:11px;color:#8b949e;flex:1}
+.sc-qty-ok{color:#3fb950;font-weight:700;font-size:14px}
+.sc-qty-low{color:#d29922;font-weight:700;font-size:14px}
+
+/* Price table */
+.price-table{width:100%;border-collapse:collapse}
+.price-table tr{border-bottom:1px solid #21262d}
+.price-table tr:last-child{border-bottom:none}
+.price-table td{padding:7px 11px;font-size:12px;vertical-align:middle}
+.pt-lbl{color:#8b949e;width:50%}
+.pt-val{font-weight:600;color:#c9d1d9;text-align:right}
+.pt-val.kaspi{color:#3fb950}
+.pt-val.price{color:#79c0ff}
+
+.sc-footer{padding:4px 11px;font-size:10px;color:#484f58;text-align:right}
 
 .loading{text-align:center;padding:50px 20px;color:#484f58}
 .empty{text-align:center;padding:50px 20px;color:#484f58}
@@ -121,7 +124,6 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
       <div class="pill" data-s="зима" onclick="setSeas(this)">❄️ Зима</div>
       <div class="pill" data-s="ШИП" onclick="setSeas(this)">🔩 Шип</div>
       <div class="pill" data-s="ВС" onclick="setSeas(this)">🌤 ВС</div>
-      <div class="pill" data-av onclick="toggleAv(this)">✓ В наличии</div>
     </div>
   </div>
   <div class="stats" id="ST" style="display:none"></div>
@@ -129,11 +131,11 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
 </div>
 
 <script>
-const PWD="Abdeldinov22";
+const PWD="a2tires2026";
 const SI={лето:'☀️',зима:'❄️','ШИП':'🔩','ВС':'🌤'};
 const SC={A2C:'s-a2c',Aikos:'s-aikos',Caspian:'s-caspian',ZAFCO:'s-zafco','KAZ-Rema':'s-rema',TDK:'s-tdk',SAN:'s-san',Freedom:'s-freedom',ADAK:'s-adak',CBC:'s-cbc'};
 
-let ALL=[],fSeas='',fAv=false,openI=-1;
+let ALL=[],fSeas='',openI=-1;
 
 if(sessionStorage.getItem('a2ok')===PWD) showApp();
 
@@ -142,13 +144,17 @@ function login(){
   if(v===PWD){sessionStorage.setItem('a2ok',v);showApp();}
   else{const e=document.getElementById('LE');e.textContent='Неверный пароль';document.getElementById('PI').value='';setTimeout(()=>e.textContent='',2000);}
 }
+
 function showApp(){
   document.getElementById('LW').style.display='none';
   document.getElementById('APP').style.display='block';
   fetch('masterfile_data.json?v='+Date.now())
     .then(r=>r.json())
     .then(d=>{
-      ALL=d.items||[];
+      // Фильтруем — только позиции с остатком > 0
+      ALL=(d.items||[]).filter(r=>r.suppliers.some(s=>qn(s.qty)>0));
+      // Убираем из поставщиков тех у кого 0
+      ALL.forEach(r=>{ r.suppliers=r.suppliers.filter(s=>qn(s.qty)>0); });
       document.getElementById('META').innerHTML=`Обн: <b>${d.updated||''}</b><br>${ALL.length} поз.`;
       search();
     })
@@ -159,20 +165,22 @@ function qn(v){const m=String(v||0).match(/\d+/);return m?+m[0]:0;}
 function fmt(v){return v?Number(v).toLocaleString('ru-RU')+'₸':'—';}
 function cl(v){const s=String(v||'').trim();return s&&s!=='nan'&&s!=='null'?s:'';}
 
-function setSeas(el){document.querySelectorAll('[data-s]').forEach(p=>p.classList.remove('active'));el.classList.add('active');fSeas=el.dataset.s;search();}
-function toggleAv(el){fAv=!fAv;el.classList.toggle('active',fAv);search();}
+function setSeas(el){
+  document.querySelectorAll('[data-s]').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');fSeas=el.dataset.s;search();
+}
 
 function search(){
   const q=(document.getElementById('Q').value||'').toLowerCase().trim();
   let res=ALL.filter(r=>{
     if(fSeas&&r.season!==fSeas)return false;
-    if(fAv&&!r.suppliers.some(s=>qn(s.qty)>0))return false;
     if(q&&![r.nom,r.brand,r.size,r.inis,r.model].join(' ').toLowerCase().includes(q))return false;
     return true;
   });
 
   const st=document.getElementById('ST');
-  st.style.display='';st.innerHTML=`Найдено: <b>${res.length}</b> позиций`;
+  st.style.display='';
+  st.innerHTML=`Найдено: <b>${res.length}</b> позиций`;
 
   const el=document.getElementById('RES');
   el.innerHTML='';openI=-1;
@@ -182,33 +190,33 @@ function search(){
   const frag=document.createDocumentFragment();
 
   show.forEach((r,i)=>{
-    const sups=r.suppliers||[];
+    const sups=r.suppliers;
     const totQty=sups.reduce((a,s)=>a+qn(s.qty),0);
     const prices=sups.filter(s=>s.price).map(s=>s.price);
     const minP=prices.length?Math.min(...prices):null;
-    const qc=totQty===0?'qty-zero':totQty<=3?'qty-low':'qty-ok';
+    const qc=totQty<=3?'qty-low':'qty-ok';
     const icon=SI[r.season]||'🔘';
     const uniqSups=[...new Set(sups.map(s=>s.sup))];
     const chips=uniqSups.map(s=>`<span class="chip ${SC[s]||'s-cbc'}">${s}</span>`).join('');
 
-    // Detail: one card per supplier entry
+    // Supplier cards with price table
     const cards=sups.map(s=>{
       const sq=qn(s.qty);
-      const sqc=sq===0?'sc-qty-zero':sq<=3?'sc-qty-low':'sc-qty-ok';
-      const hasAnyPrice=s.price||s.opt||s.retail||s.kaspi;
+      const sqc=sq<=3?'sc-qty-low':'sc-qty-ok';
+      const rows=[
+        s.price  ? `<tr><td class="pt-lbl">Закуп с НДС</td><td class="pt-val">${fmt(s.price)}</td></tr>` : '',
+        s.opt    ? `<tr><td class="pt-lbl">ОПТ</td><td class="pt-val price">${fmt(s.opt)}</td></tr>` : '',
+        s.retail ? `<tr><td class="pt-lbl">Цена</td><td class="pt-val">${fmt(s.retail)}</td></tr>` : '',
+        s.kaspi  ? `<tr><td class="pt-lbl">Каспи</td><td class="pt-val kaspi">${fmt(s.kaspi)}</td></tr>` : '',
+      ].filter(Boolean).join('');
       return `<div class="sup-card">
-        <div class="sc-top">
+        <div class="sc-hdr">
           <span class="chip ${SC[s.sup]||'s-cbc'} sc-name">${s.sup}</span>
           <span class="sc-addr">${cl(s.addr)||'—'}</span>
-          <span class="${sqc}">${s.qty||'0'} шт</span>
+          <span class="${sqc}">${s.qty} шт</span>
         </div>
-        ${hasAnyPrice?`<div class="sc-prices">
-          ${s.price ?`<div class="sc-price-row"><span class="sc-lbl">Закуп с НДС</span><span class="sc-val">${fmt(s.price)}</span></div>`:''}
-          ${s.opt   ?`<div class="sc-price-row"><span class="sc-lbl">ОПТ</span><span class="sc-val">${fmt(s.opt)}</span></div>`:''}
-          ${s.retail?`<div class="sc-price-row"><span class="sc-lbl">Цена</span><span class="sc-val">${fmt(s.retail)}</span></div>`:''}
-          ${s.kaspi ?`<div class="sc-price-row"><span class="sc-lbl">Каспи</span><span class="sc-val kaspi">${fmt(s.kaspi)}</span></div>`:''}
-        </div>`:''}
-        ${s.updated?`<div class="sc-updated">обн. ${s.updated}</div>`:''}
+        ${rows?`<table class="price-table">${rows}</table>`:''}
+        ${s.updated?`<div class="sc-footer">обн. ${s.updated}</div>`:''}
       </div>`;
     }).join('');
 
@@ -227,7 +235,7 @@ function search(){
         </div>
         <div class="r-bot">
           <div class="sup-chips">${chips}</div>
-          <span class="${qc}">${totQty>0?totQty+'шт':'нет'}</span>
+          <span class="${qc}">${totQty} шт</span>
           ${minP?`<span class="min-price">от ${fmt(minP)}</span>`:''}
         </div>
       </div>
