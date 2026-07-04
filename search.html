@@ -8,50 +8,52 @@
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh;font-size:14px}
 
-/* Login screen */
+/* Login */
 .login-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
-.login-box{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:36px 32px;width:100%;max-width:340px;text-align:center}
-.login-logo{font-size:28px;font-weight:700;color:#58a6ff;margin-bottom:6px}
-.login-sub{font-size:13px;color:#8b949e;margin-bottom:28px}
-.login-inp{width:100%;background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#c9d1d9;padding:12px 16px;font-size:15px;outline:none;text-align:center;letter-spacing:3px;margin-bottom:12px}
+.login-box{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:36px 32px;width:100%;max-width:320px;text-align:center}
+.login-logo{font-size:26px;font-weight:700;color:#58a6ff;margin-bottom:6px}
+.login-sub{font-size:13px;color:#8b949e;margin-bottom:24px}
+.login-inp{width:100%;background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#c9d1d9;padding:12px 16px;font-size:15px;outline:none;text-align:center;letter-spacing:2px;margin-bottom:10px}
 .login-inp:focus{border-color:#58a6ff}
 .login-inp::placeholder{letter-spacing:0;color:#484f58}
-.login-btn{width:100%;background:#238636;color:#fff;border:none;border-radius:8px;padding:13px;font-size:15px;font-weight:600;cursor:pointer}
+.login-btn{width:100%;background:#238636;color:#fff;border:none;border-radius:8px;padding:12px;font-size:15px;font-weight:600;cursor:pointer}
 .login-btn:hover{background:#2ea043}
-.login-err{color:#f85149;font-size:12px;margin-top:10px;min-height:18px}
+.login-err{color:#f85149;font-size:12px;margin-top:8px;min-height:16px}
 
-/* Main app */
+/* App */
 .app{display:none}
-.hdr{background:#161b22;border-bottom:1px solid #30363d;padding:12px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
-.logo{font-size:16px;font-weight:700;color:#58a6ff;white-space:nowrap}
-.hdr-meta{font-size:11px;color:#8b949e;margin-left:auto;text-align:right;line-height:1.5}
-.hdr-meta span{color:#3fb950}
+.hdr{background:#161b22;border-bottom:1px solid #30363d;padding:11px 16px;display:flex;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-size:15px;font-weight:700;color:#58a6ff}
+.hdr-meta{font-size:11px;color:#8b949e;margin-left:auto;text-align:right;line-height:1.4}
+.hdr-meta b{color:#3fb950}
 
-.search-area{background:#161b22;border-bottom:1px solid #30363d;padding:10px 16px;position:sticky;top:49px;z-index:99}
-.inp{background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#c9d1d9;padding:10px 14px;font-size:14px;outline:none;width:100%;margin-bottom:8px}
+.search-area{background:#161b22;border-bottom:1px solid #30363d;padding:10px 14px;position:sticky;top:44px;z-index:99}
+.inp{background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#c9d1d9;padding:9px 13px;font-size:14px;outline:none;width:100%;margin-bottom:8px}
 .inp:focus{border-color:#58a6ff}
 .inp::placeholder{color:#484f58}
 
-.filters{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.filters{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none}
 .filters::-webkit-scrollbar{display:none}
-.pill{display:flex;align-items:center;gap:4px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid #30363d;background:#0d1117;color:#8b949e;cursor:pointer;white-space:nowrap;user-select:none}
+.pill{padding:5px 11px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid #30363d;background:#0d1117;color:#8b949e;cursor:pointer;white-space:nowrap;user-select:none;flex-shrink:0}
 .pill.active{background:#1f3a5f;border-color:#388bfd;color:#79c0ff}
 
-.stats{font-size:11px;color:#8b949e;padding:8px 16px 4px;border-bottom:1px solid #21262d}
+.stats{font-size:11px;color:#8b949e;padding:7px 14px;border-bottom:1px solid #21262d}
 .stats b{color:#58a6ff}
 
-.row-item{display:flex;flex-direction:column;gap:3px;padding:10px 16px;border-bottom:1px solid #21262d;cursor:pointer}
-.row-item:active{background:#161b22}
-.row-top{display:flex;align-items:center;gap:8px}
-.seas-icon{font-size:16px;flex-shrink:0;width:22px;text-align:center}
-.nom-text{font-size:13px;font-weight:500;color:#e6edf3;line-height:1.3;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.row-mid{display:flex;align-items:center;gap:8px;padding-left:30px}
-.size-badge{font-size:11px;font-weight:600;color:#79c0ff;background:#0d2a4a;padding:2px 8px;border-radius:4px;white-space:nowrap}
-.brand-txt{font-size:11px;color:#8b949e}
-.inis-txt{font-size:11px;color:#6e7681}
-.row-bot{display:flex;align-items:center;padding-left:30px}
-.sup-tags{display:flex;gap:4px;flex:1;overflow:hidden}
-.sup-tag{font-size:11px;padding:2px 7px;border-radius:4px;white-space:nowrap;border:1px solid}
+/* Row */
+.item{border-bottom:1px solid #21262d}
+.row{display:flex;flex-direction:column;gap:3px;padding:9px 14px;cursor:pointer}
+.row:active{background:#161b22}
+.r-top{display:flex;align-items:center;gap:7px}
+.si{font-size:15px;flex-shrink:0;width:20px;text-align:center}
+.nom{font-size:13px;font-weight:500;color:#e6edf3;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.r-mid{display:flex;align-items:center;gap:7px;padding-left:27px}
+.sz{font-size:11px;font-weight:600;color:#79c0ff;background:#0d2a4a;padding:2px 7px;border-radius:4px;white-space:nowrap}
+.br{font-size:11px;color:#8b949e}
+.in{font-size:11px;color:#6e7681}
+.r-bot{display:flex;align-items:center;padding-left:27px;gap:4px}
+.sup-chips{display:flex;gap:3px;flex:1;overflow:hidden}
+.chip{font-size:11px;padding:2px 6px;border-radius:4px;white-space:nowrap;border:1px solid;flex-shrink:0}
 .s-a2c{color:#3fb950;border-color:#238636;background:#0d2a1a}
 .s-aikos{color:#d29922;border-color:#9e6a03;background:#1c1300}
 .s-caspian{color:#79c0ff;border-color:#388bfd;background:#0d1f3a}
@@ -61,221 +63,196 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
 .s-san{color:#48d483;border-color:#2ea043;background:#0a2010}
 .s-freedom{color:#ff7b72;border-color:#da3633;background:#2d1010}
 .s-adak{color:#e3b341;border-color:#9e6a03;background:#1f1700}
-.s-cbc{color:#8b949e;border-color:#30363d;background:#161b22}
-.qty-tag{font-size:11px;font-weight:600;margin-left:auto;white-space:nowrap;padding-left:8px}
-.qty-ok{color:#3fb950}.qty-low{color:#d29922}.qty-zero{color:#484f58}
-.price-txt{font-size:11px;color:#6e7681;margin-left:6px;white-space:nowrap}
+.s-cbc{color:#8b949e;border-color:#30363d;background:#0d1117}
+.qty-ok{color:#3fb950;font-weight:600;font-size:11px;margin-left:auto;flex-shrink:0}
+.qty-low{color:#d29922;font-weight:600;font-size:11px;margin-left:auto;flex-shrink:0}
+.qty-zero{color:#484f58;font-size:11px;margin-left:auto;flex-shrink:0}
+.min-price{font-size:11px;color:#6e7681;margin-left:5px;flex-shrink:0}
 
-.detail{display:none;background:#161b22;border-top:1px solid #21262d;padding:10px 16px 10px 46px}
+/* Detail panel */
+.detail{display:none;background:#0d1117;border-top:1px solid #21262d;padding:8px 14px 10px}
 .detail.open{display:block}
-.detail-sups{display:flex;flex-direction:column;gap:4px}
-.detail-sup{display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:7px 10px;border-radius:7px;background:#0d1117;border:1px solid #21262d}
-.ds-left{display:flex;align-items:center;gap:6px;overflow:hidden}
-.ds-addr{color:#8b949e;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ds-right{display:flex;align-items:center;gap:10px;flex-shrink:0;margin-left:8px}
-.ds-qty{font-weight:600}
-.ds-price{color:#8b949e;font-size:11px}
-.ds-kaspi{color:#3fb950;font-size:11px}
+.d-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:#484f58;margin-bottom:6px}
 
-.loading{text-align:center;padding:60px 20px;color:#484f58}
-.empty{text-align:center;padding:60px 20px;color:#484f58}
-.spinner{display:inline-block;width:28px;height:28px;border:3px solid #21262d;border-top-color:#58a6ff;border-radius:50%;animation:spin .8s linear infinite;margin-bottom:12px}
-@keyframes spin{to{transform:rotate(360deg)}}
+/* Supplier detail cards */
+.sup-card{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:9px 11px;margin-bottom:6px}
+.sup-card:last-child{margin-bottom:0}
+.sc-top{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.sc-name{font-size:12px;font-weight:600}
+.sc-addr{font-size:11px;color:#8b949e}
+.sc-qty-ok{color:#3fb950;font-weight:700;font-size:13px;margin-left:auto}
+.sc-qty-low{color:#d29922;font-weight:700;font-size:13px;margin-left:auto}
+.sc-qty-zero{color:#484f58;font-size:13px;margin-left:auto}
+.sc-prices{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+.sc-price-row{display:flex;justify-content:space-between;align-items:baseline;font-size:12px}
+.sc-lbl{color:#8b949e;font-size:11px}
+.sc-val{font-weight:600;color:#c9d1d9}
+.sc-val.kaspi{color:#3fb950}
+.sc-updated{font-size:10px;color:#484f58;margin-top:5px;text-align:right}
+
+.loading{text-align:center;padding:50px 20px;color:#484f58}
+.empty{text-align:center;padding:50px 20px;color:#484f58}
+.spin{display:inline-block;width:24px;height:24px;border:2px solid #21262d;border-top-color:#58a6ff;border-radius:50%;animation:sp .8s linear infinite;margin-bottom:10px}
+@keyframes sp{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 
-<!-- Экран входа -->
-<div class="login-wrap" id="loginWrap">
+<div class="login-wrap" id="LW">
   <div class="login-box">
     <div class="login-logo">А2 Шины</div>
     <div class="login-sub">Введите пароль для доступа</div>
-    <input class="login-inp" id="pwdInp" type="password" placeholder="Пароль"
-           onkeydown="if(event.key==='Enter')doLogin()">
-    <button class="login-btn" onclick="doLogin()">Войти</button>
-    <div class="login-err" id="loginErr"></div>
+    <input class="login-inp" id="PI" type="password" placeholder="Пароль" onkeydown="if(event.key==='Enter')login()">
+    <button class="login-btn" onclick="login()">Войти</button>
+    <div class="login-err" id="LE"></div>
   </div>
 </div>
 
-<!-- Основное приложение -->
-<div class="app" id="app">
+<div class="app" id="APP">
   <div class="hdr">
     <div class="logo">А2 Шины</div>
-    <div class="hdr-meta" id="meta">Загрузка...</div>
+    <div class="hdr-meta" id="META">Загрузка...</div>
   </div>
   <div class="search-area">
-    <input class="inp" id="q" placeholder="🔍  Размер, бренд, модель..." oninput="search()">
+    <input class="inp" id="Q" placeholder="🔍  Размер, бренд, модель..." oninput="search()">
     <div class="filters">
-      <div class="pill active" data-seas="" onclick="setSeas(this)">Все</div>
-      <div class="pill" data-seas="лето" onclick="setSeas(this)">☀️ Лето</div>
-      <div class="pill" data-seas="зима" onclick="setSeas(this)">❄️ Зима</div>
-      <div class="pill" data-seas="ШИП" onclick="setSeas(this)">🔩 Шип</div>
-      <div class="pill" data-seas="ВС" onclick="setSeas(this)">🌤 ВС</div>
-      <div class="pill" data-avail="1" onclick="toggleAvail(this)">✓ В наличии</div>
+      <div class="pill active" data-s="" onclick="setSeas(this)">Все</div>
+      <div class="pill" data-s="лето" onclick="setSeas(this)">☀️ Лето</div>
+      <div class="pill" data-s="зима" onclick="setSeas(this)">❄️ Зима</div>
+      <div class="pill" data-s="ШИП" onclick="setSeas(this)">🔩 Шип</div>
+      <div class="pill" data-s="ВС" onclick="setSeas(this)">🌤 ВС</div>
+      <div class="pill" data-av onclick="toggleAv(this)">✓ В наличии</div>
     </div>
   </div>
-  <div class="stats" id="stats" style="display:none"></div>
-  <div id="results"><div class="loading"><div class="spinner"></div><br>Загрузка данных...</div></div>
+  <div class="stats" id="ST" style="display:none"></div>
+  <div id="RES"><div class="loading"><div class="spin"></div><br>Загрузка...</div></div>
 </div>
 
 <script>
-// ═══════════════════════════════════════════
-// ПАРОЛЬ — измените на свой
-const PASSWORD = "Abdeldinov22";
-// ═══════════════════════════════════════════
+const PWD="a2tires2026";
+const SI={лето:'☀️',зима:'❄️','ШИП':'🔩','ВС':'🌤'};
+const SC={A2C:'s-a2c',Aikos:'s-aikos',Caspian:'s-caspian',ZAFCO:'s-zafco','KAZ-Rema':'s-rema',TDK:'s-tdk',SAN:'s-san',Freedom:'s-freedom',ADAK:'s-adak',CBC:'s-cbc'};
 
-const SEAS_ICON={лето:'☀️',зима:'❄️','ШИП':'🔩','ВС':'🌤'};
-const SUP_CLS={
-  'A2C':'s-a2c','Aikos':'s-aikos','Caspian':'s-caspian','ZAFCO':'s-zafco',
-  'KAZ-Rema':'s-rema','TDK':'s-tdk','SAN':'s-san','Freedom':'s-freedom',
-  'ADAK':'s-adak','CBC':'s-cbc'
-};
+let ALL=[],fSeas='',fAv=false,openI=-1;
 
-let ALL=[], filterSeas='', filterAvail=false, openIdx=-1;
+if(sessionStorage.getItem('a2ok')===PWD) showApp();
 
-// Проверяем сохранённый пароль
-if(sessionStorage.getItem('a2auth')===PASSWORD){
-  showApp();
+function login(){
+  const v=document.getElementById('PI').value;
+  if(v===PWD){sessionStorage.setItem('a2ok',v);showApp();}
+  else{const e=document.getElementById('LE');e.textContent='Неверный пароль';document.getElementById('PI').value='';setTimeout(()=>e.textContent='',2000);}
 }
-
-function doLogin(){
-  const val=document.getElementById('pwdInp').value;
-  if(val===PASSWORD){
-    sessionStorage.setItem('a2auth',val);
-    showApp();
-  } else {
-    const err=document.getElementById('loginErr');
-    err.textContent='Неверный пароль';
-    document.getElementById('pwdInp').value='';
-    setTimeout(()=>err.textContent='',2000);
-  }
-}
-
 function showApp(){
-  document.getElementById('loginWrap').style.display='none';
-  document.getElementById('app').style.display='block';
-  loadData();
-}
-
-function qtyNum(v){const m=String(v||0).match(/\d+/);return m?parseInt(m[0]):0;}
-function fmt(v){return v?Number(v).toLocaleString('ru-RU')+'₸':'—';}
-function clean(v){const s=String(v||'').trim();return s&&s!=='nan'&&s!=='null'?s:'';}
-
-function loadData(){
+  document.getElementById('LW').style.display='none';
+  document.getElementById('APP').style.display='block';
   fetch('masterfile_data.json?v='+Date.now())
     .then(r=>r.json())
-    .then(data=>{
-      ALL=data.items||[];
-      document.getElementById('meta').innerHTML=
-        `Обн: <span>${data.updated||''}</span><br>${ALL.length} позиций`;
+    .then(d=>{
+      ALL=d.items||[];
+      document.getElementById('META').innerHTML=`Обн: <b>${d.updated||''}</b><br>${ALL.length} поз.`;
       search();
     })
-    .catch(()=>{
-      document.getElementById('results').innerHTML=
-        '<div class="empty">⚠️ Данные не найдены.<br>Запустите обновление мастерфайла.</div>';
-    });
+    .catch(()=>document.getElementById('RES').innerHTML='<div class="empty">⚠️ Данные не найдены</div>');
 }
 
-function setSeas(el){
-  document.querySelectorAll('[data-seas]').forEach(p=>p.classList.remove('active'));
-  el.classList.add('active');
-  filterSeas=el.dataset.seas;
-  search();
-}
-function toggleAvail(el){
-  filterAvail=!filterAvail;
-  el.classList.toggle('active',filterAvail);
-  search();
-}
+function qn(v){const m=String(v||0).match(/\d+/);return m?+m[0]:0;}
+function fmt(v){return v?Number(v).toLocaleString('ru-RU')+'₸':'—';}
+function cl(v){const s=String(v||'').trim();return s&&s!=='nan'&&s!=='null'?s:'';}
+
+function setSeas(el){document.querySelectorAll('[data-s]').forEach(p=>p.classList.remove('active'));el.classList.add('active');fSeas=el.dataset.s;search();}
+function toggleAv(el){fAv=!fAv;el.classList.toggle('active',fAv);search();}
 
 function search(){
-  const q=(document.getElementById('q').value||'').toLowerCase().trim();
+  const q=(document.getElementById('Q').value||'').toLowerCase().trim();
   let res=ALL.filter(r=>{
-    if(filterSeas&&r.season!==filterSeas) return false;
-    if(filterAvail&&!r.suppliers.some(s=>qtyNum(s.qty)>0)) return false;
-    if(q){
-      const hay=[r.nom,r.brand,r.size,r.inis,r.model].join(' ').toLowerCase();
-      if(!hay.includes(q)) return false;
-    }
+    if(fSeas&&r.season!==fSeas)return false;
+    if(fAv&&!r.suppliers.some(s=>qn(s.qty)>0))return false;
+    if(q&&![r.nom,r.brand,r.size,r.inis,r.model].join(' ').toLowerCase().includes(q))return false;
     return true;
   });
 
-  const st=document.getElementById('stats');
-  st.style.display='';
-  st.innerHTML=`Найдено: <b>${res.length}</b> позиций`;
+  const st=document.getElementById('ST');
+  st.style.display='';st.innerHTML=`Найдено: <b>${res.length}</b> позиций`;
 
-  const el=document.getElementById('results');
-  el.innerHTML=''; openIdx=-1;
+  const el=document.getElementById('RES');
+  el.innerHTML='';openI=-1;
   if(!res.length){el.innerHTML='<div class="empty">Ничего не найдено</div>';return;}
 
-  const toShow=res.slice(0,300);
+  const show=res.slice(0,300);
   const frag=document.createDocumentFragment();
 
-  toShow.forEach((r,i)=>{
+  show.forEach((r,i)=>{
     const sups=r.suppliers||[];
-    const totalQty=sups.reduce((a,s)=>a+qtyNum(s.qty),0);
+    const totQty=sups.reduce((a,s)=>a+qn(s.qty),0);
     const prices=sups.filter(s=>s.price).map(s=>s.price);
-    const minPrice=prices.length?Math.min(...prices):null;
-    const qcls=totalQty===0?'qty-zero':totalQty<=3?'qty-low':'qty-ok';
-    const icon=SEAS_ICON[r.season]||'🔘';
-    const uniqueSups=[...new Set(sups.map(s=>s.sup))];
-    const supTags=uniqueSups.map(s=>`<span class="sup-tag ${SUP_CLS[s]||'s-cbc'}">${s}</span>`).join('');
+    const minP=prices.length?Math.min(...prices):null;
+    const qc=totQty===0?'qty-zero':totQty<=3?'qty-low':'qty-ok';
+    const icon=SI[r.season]||'🔘';
+    const uniqSups=[...new Set(sups.map(s=>s.sup))];
+    const chips=uniqSups.map(s=>`<span class="chip ${SC[s]||'s-cbc'}">${s}</span>`).join('');
+
+    // Detail: one card per supplier entry
+    const cards=sups.map(s=>{
+      const sq=qn(s.qty);
+      const sqc=sq===0?'sc-qty-zero':sq<=3?'sc-qty-low':'sc-qty-ok';
+      const hasAnyPrice=s.price||s.opt||s.retail||s.kaspi;
+      return `<div class="sup-card">
+        <div class="sc-top">
+          <span class="chip ${SC[s.sup]||'s-cbc'} sc-name">${s.sup}</span>
+          <span class="sc-addr">${cl(s.addr)||'—'}</span>
+          <span class="${sqc}">${s.qty||'0'} шт</span>
+        </div>
+        ${hasAnyPrice?`<div class="sc-prices">
+          ${s.price ?`<div class="sc-price-row"><span class="sc-lbl">Закуп с НДС</span><span class="sc-val">${fmt(s.price)}</span></div>`:''}
+          ${s.opt   ?`<div class="sc-price-row"><span class="sc-lbl">ОПТ</span><span class="sc-val">${fmt(s.opt)}</span></div>`:''}
+          ${s.retail?`<div class="sc-price-row"><span class="sc-lbl">Цена</span><span class="sc-val">${fmt(s.retail)}</span></div>`:''}
+          ${s.kaspi ?`<div class="sc-price-row"><span class="sc-lbl">Каспи</span><span class="sc-val kaspi">${fmt(s.kaspi)}</span></div>`:''}
+        </div>`:''}
+        ${s.updated?`<div class="sc-updated">обн. ${s.updated}</div>`:''}
+      </div>`;
+    }).join('');
 
     const wrap=document.createElement('div');
+    wrap.className='item';
     wrap.innerHTML=`
-      <div class="row-item" onclick="toggleDetail(${i})">
-        <div class="row-top">
-          <span class="seas-icon">${icon}</span>
-          <span class="nom-text">${r.nom}</span>
+      <div class="row" onclick="tog(${i})">
+        <div class="r-top">
+          <span class="si">${icon}</span>
+          <span class="nom">${r.nom}</span>
         </div>
-        <div class="row-mid">
-          ${r.size?`<span class="size-badge">${r.size}</span>`:''}
-          ${r.brand?`<span class="brand-txt">${r.brand}</span>`:''}
-          ${r.inis?`<span class="inis-txt">${r.inis}</span>`:''}
+        <div class="r-mid">
+          ${r.size?`<span class="sz">${r.size}</span>`:''}
+          ${r.brand?`<span class="br">${r.brand}</span>`:''}
+          ${r.inis?`<span class="in">${r.inis}</span>`:''}
         </div>
-        <div class="row-bot">
-          <div class="sup-tags">${supTags}</div>
-          <span class="qty-tag ${qcls}">${totalQty>0?totalQty+'шт':'нет'}</span>
-          ${minPrice?`<span class="price-txt">от ${fmt(minPrice)}</span>`:''}
+        <div class="r-bot">
+          <div class="sup-chips">${chips}</div>
+          <span class="${qc}">${totQty>0?totQty+'шт':'нет'}</span>
+          ${minP?`<span class="min-price">от ${fmt(minP)}</span>`:''}
         </div>
       </div>
       <div class="detail" id="d${i}">
-        <div class="detail-sups">
-          ${sups.map(s=>{
-            const qn=qtyNum(s.qty);
-            const qc=qn===0?'qty-zero':qn<=3?'qty-low':'qty-ok';
-            return `<div class="detail-sup">
-              <div class="ds-left">
-                <span class="sup-tag ${SUP_CLS[s.sup]||'s-cbc'}">${s.sup}</span>
-                <span class="ds-addr">${clean(s.addr)||'—'}</span>
-              </div>
-              <div class="ds-right">
-                <span class="ds-qty ${qc}">${s.qty||'0'}</span>
-                ${s.price?`<span class="ds-price">${fmt(s.price)}</span>`:''}
-                ${s.kaspi?`<span class="ds-kaspi">Каспи: ${fmt(s.kaspi)}</span>`:''}
-              </div>
-            </div>`;
-          }).join('')}
-        </div>
+        <div class="d-title">Поставщики и цены</div>
+        ${cards}
       </div>`;
     frag.appendChild(wrap);
   });
 
   el.appendChild(frag);
   if(res.length>300){
-    const more=document.createElement('div');
-    more.style.cssText='text-align:center;padding:16px;color:#8b949e;font-size:12px';
-    more.textContent=`Показано 300 из ${res.length}. Уточните запрос.`;
-    el.appendChild(more);
+    const m=document.createElement('div');
+    m.style.cssText='text-align:center;padding:14px;color:#8b949e;font-size:12px';
+    m.textContent=`Показано 300 из ${res.length}. Уточните запрос.`;
+    el.appendChild(m);
   }
 }
 
-function toggleDetail(i){
+function tog(i){
   const d=document.getElementById('d'+i);
-  if(!d) return;
-  if(openIdx===i){d.classList.remove('open');openIdx=-1;return;}
-  if(openIdx>=0){const p=document.getElementById('d'+openIdx);if(p)p.classList.remove('open');}
-  d.classList.add('open');openIdx=i;
+  if(!d)return;
+  if(openI===i){d.classList.remove('open');openI=-1;return;}
+  if(openI>=0){const p=document.getElementById('d'+openI);if(p)p.classList.remove('open');}
+  d.classList.add('open');openI=i;
 }
 </script>
 </body>
