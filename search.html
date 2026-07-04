@@ -26,18 +26,33 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
 .hdr-meta b{color:#3fb950}
 
 .search-area{background:#161b22;border-bottom:1px solid #30363d;padding:10px 14px;position:sticky;top:44px;z-index:99}
-.inp{background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#c9d1d9;padding:9px 13px;font-size:14px;outline:none;width:100%;margin-bottom:8px}
+
+/* Search row */
+.search-row{display:flex;gap:8px;margin-bottom:8px}
+.inp{background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#c9d1d9;padding:9px 13px;font-size:14px;outline:none;flex:1}
 .inp:focus{border-color:#58a6ff}
 .inp::placeholder{color:#484f58}
-.filters{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none}
-.filters::-webkit-scrollbar{display:none}
+
+/* Brand select */
+.brand-sel{background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#c9d1d9;padding:9px 10px;font-size:13px;outline:none;max-width:130px;cursor:pointer}
+.brand-sel:focus{border-color:#58a6ff}
+.brand-sel option{background:#161b22}
+
+/* Sort + filters row */
+.ctrl-row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;align-items:center}
+.ctrl-row::-webkit-scrollbar{display:none}
+
 .pill{padding:5px 11px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid #30363d;background:#0d1117;color:#8b949e;cursor:pointer;white-space:nowrap;user-select:none;flex-shrink:0}
 .pill.active{background:#1f3a5f;border-color:#388bfd;color:#79c0ff}
+
+.sort-btn{padding:5px 10px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid #30363d;background:#0d1117;color:#8b949e;cursor:pointer;white-space:nowrap;user-select:none;flex-shrink:0;display:flex;align-items:center;gap:4px}
+.sort-btn.active{background:#1a2a1a;border-color:#2ea043;color:#3fb950}
+
+.divider{width:1px;height:18px;background:#30363d;flex-shrink:0}
 
 .stats{font-size:11px;color:#8b949e;padding:7px 14px;border-bottom:1px solid #21262d}
 .stats b{color:#58a6ff}
 
-/* Row */
 .item{border-bottom:1px solid #21262d}
 .row{display:flex;flex-direction:column;gap:3px;padding:9px 14px;cursor:pointer}
 .row:active{background:#161b22}
@@ -65,23 +80,15 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
 .qty-low{color:#d29922;font-weight:600;font-size:11px;margin-left:auto;flex-shrink:0}
 .min-price{font-size:11px;color:#6e7681;margin-left:5px;flex-shrink:0}
 
-/* Detail */
 .detail{display:none;background:#0d1117;border-top:1px solid #21262d;padding:8px 14px 10px}
 .detail.open{display:block}
 .d-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:#484f58;margin-bottom:8px}
-
-/* Supplier card */
 .sup-card{background:#161b22;border:1px solid #21262d;border-radius:8px;margin-bottom:6px;overflow:hidden}
 .sup-card:last-child{margin-bottom:0}
-
-/* Sup header */
 .sc-hdr{display:flex;align-items:center;gap:8px;padding:8px 11px;border-bottom:1px solid #21262d}
-.sc-name{font-size:12px;font-weight:600}
 .sc-addr{font-size:11px;color:#8b949e;flex:1}
 .sc-qty-ok{color:#3fb950;font-weight:700;font-size:14px}
 .sc-qty-low{color:#d29922;font-weight:700;font-size:14px}
-
-/* Price table */
 .price-table{width:100%;border-collapse:collapse}
 .price-table tr{border-bottom:1px solid #21262d}
 .price-table tr:last-child{border-bottom:none}
@@ -89,8 +96,7 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
 .pt-lbl{color:#8b949e;width:50%}
 .pt-val{font-weight:600;color:#c9d1d9;text-align:right}
 .pt-val.kaspi{color:#3fb950}
-.pt-val.price{color:#79c0ff}
-
+.pt-val.opt{color:#79c0ff}
 .sc-footer{padding:4px 11px;font-size:10px;color:#484f58;text-align:right}
 
 .loading{text-align:center;padding:50px 20px;color:#484f58}
@@ -117,13 +123,20 @@ body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-heig
     <div class="hdr-meta" id="META">Загрузка...</div>
   </div>
   <div class="search-area">
-    <input class="inp" id="Q" placeholder="🔍  Размер, бренд, модель..." oninput="search()">
-    <div class="filters">
+    <div class="search-row">
+      <input class="inp" id="Q" placeholder="🔍  Размер, модель..." oninput="search()">
+      <select class="brand-sel" id="BR" onchange="search()">
+        <option value="">Все бренды</option>
+      </select>
+    </div>
+    <div class="ctrl-row">
       <div class="pill active" data-s="" onclick="setSeas(this)">Все</div>
       <div class="pill" data-s="лето" onclick="setSeas(this)">☀️ Лето</div>
       <div class="pill" data-s="зима" onclick="setSeas(this)">❄️ Зима</div>
       <div class="pill" data-s="ШИП" onclick="setSeas(this)">🔩 Шип</div>
       <div class="pill" data-s="ВС" onclick="setSeas(this)">🌤 ВС</div>
+      <div class="divider"></div>
+      <div class="sort-btn" id="sortBtn" onclick="toggleSort()">↕ Цена</div>
     </div>
   </div>
   <div class="stats" id="ST" style="display:none"></div>
@@ -135,7 +148,8 @@ const PWD="a2tires2026";
 const SI={лето:'☀️',зима:'❄️','ШИП':'🔩','ВС':'🌤'};
 const SC={A2C:'s-a2c',Aikos:'s-aikos',Caspian:'s-caspian',ZAFCO:'s-zafco','KAZ-Rema':'s-rema',TDK:'s-tdk',SAN:'s-san',Freedom:'s-freedom',ADAK:'s-adak',CBC:'s-cbc'};
 
-let ALL=[],fSeas='',openI=-1;
+let ALL=[],fSeas='',sortDir=0,openI=-1;
+// sortDir: 0=нет, 1=по возр., -1=по убыв.
 
 if(sessionStorage.getItem('a2ok')===PWD) showApp();
 
@@ -151,32 +165,58 @@ function showApp(){
   fetch('masterfile_data.json?v='+Date.now())
     .then(r=>r.json())
     .then(d=>{
-      // Фильтруем — только позиции с остатком > 0
       ALL=(d.items||[]).filter(r=>r.suppliers.some(s=>qn(s.qty)>0));
-      // Убираем из поставщиков тех у кого 0
-      ALL.forEach(r=>{ r.suppliers=r.suppliers.filter(s=>qn(s.qty)>0); });
+      ALL.forEach(r=>{r.suppliers=r.suppliers.filter(s=>qn(s.qty)>0);});
       document.getElementById('META').innerHTML=`Обн: <b>${d.updated||''}</b><br>${ALL.length} поз.`;
+      buildBrands();
       search();
     })
     .catch(()=>document.getElementById('RES').innerHTML='<div class="empty">⚠️ Данные не найдены</div>');
 }
 
+function buildBrands(){
+  const brands=[...new Set(ALL.map(r=>r.brand).filter(Boolean))].sort();
+  const sel=document.getElementById('BR');
+  brands.forEach(b=>{
+    const o=document.createElement('option');
+    o.value=b; o.textContent=b;
+    sel.appendChild(o);
+  });
+}
+
 function qn(v){const m=String(v||0).match(/\d+/);return m?+m[0]:0;}
 function fmt(v){return v?Number(v).toLocaleString('ru-RU')+'₸':'—';}
 function cl(v){const s=String(v||'').trim();return s&&s!=='nan'&&s!=='null'?s:'';}
+function minPrice(r){const p=r.suppliers.filter(s=>s.price).map(s=>s.price);return p.length?Math.min(...p):Infinity;}
 
-function setSeas(el){
-  document.querySelectorAll('[data-s]').forEach(p=>p.classList.remove('active'));
-  el.classList.add('active');fSeas=el.dataset.s;search();
+function setSeas(el){document.querySelectorAll('[data-s]').forEach(p=>p.classList.remove('active'));el.classList.add('active');fSeas=el.dataset.s;search();}
+
+function toggleSort(){
+  sortDir=sortDir===1?-1:1;
+  const btn=document.getElementById('sortBtn');
+  btn.classList.add('active');
+  btn.textContent=sortDir===1?'↑ Цена мин':'↓ Цена макс';
+  search();
 }
 
 function search(){
   const q=(document.getElementById('Q').value||'').toLowerCase().trim();
+  const br=document.getElementById('BR').value;
+
   let res=ALL.filter(r=>{
     if(fSeas&&r.season!==fSeas)return false;
-    if(q&&![r.nom,r.brand,r.size,r.inis,r.model].join(' ').toLowerCase().includes(q))return false;
+    if(br&&r.brand!==br)return false;
+    if(q&&![r.nom,r.size,r.inis,r.model].join(' ').toLowerCase().includes(q))return false;
     return true;
   });
+
+  // Сортировка по минимальной цене
+  if(sortDir!==0){
+    res=res.slice().sort((a,b)=>{
+      const pa=minPrice(a), pb=minPrice(b);
+      return sortDir*(pa-pb);
+    });
+  }
 
   const st=document.getElementById('ST');
   st.style.display='';
@@ -192,26 +232,24 @@ function search(){
   show.forEach((r,i)=>{
     const sups=r.suppliers;
     const totQty=sups.reduce((a,s)=>a+qn(s.qty),0);
-    const prices=sups.filter(s=>s.price).map(s=>s.price);
-    const minP=prices.length?Math.min(...prices):null;
+    const mp=minPrice(r);
     const qc=totQty<=3?'qty-low':'qty-ok';
     const icon=SI[r.season]||'🔘';
     const uniqSups=[...new Set(sups.map(s=>s.sup))];
     const chips=uniqSups.map(s=>`<span class="chip ${SC[s]||'s-cbc'}">${s}</span>`).join('');
 
-    // Supplier cards with price table
     const cards=sups.map(s=>{
       const sq=qn(s.qty);
       const sqc=sq<=3?'sc-qty-low':'sc-qty-ok';
       const rows=[
-        s.price  ? `<tr><td class="pt-lbl">Закуп с НДС</td><td class="pt-val">${fmt(s.price)}</td></tr>` : '',
-        s.opt    ? `<tr><td class="pt-lbl">ОПТ</td><td class="pt-val price">${fmt(s.opt)}</td></tr>` : '',
-        s.retail ? `<tr><td class="pt-lbl">Цена</td><td class="pt-val">${fmt(s.retail)}</td></tr>` : '',
-        s.kaspi  ? `<tr><td class="pt-lbl">Каспи</td><td class="pt-val kaspi">${fmt(s.kaspi)}</td></tr>` : '',
+        s.price  ?`<tr><td class="pt-lbl">Закуп с НДС</td><td class="pt-val">${fmt(s.price)}</td></tr>`:'',
+        s.opt    ?`<tr><td class="pt-lbl">ОПТ</td><td class="pt-val opt">${fmt(s.opt)}</td></tr>`:'',
+        s.retail ?`<tr><td class="pt-lbl">Цена</td><td class="pt-val">${fmt(s.retail)}</td></tr>`:'',
+        s.kaspi  ?`<tr><td class="pt-lbl">Каспи</td><td class="pt-val kaspi">${fmt(s.kaspi)}</td></tr>`:'',
       ].filter(Boolean).join('');
       return `<div class="sup-card">
         <div class="sc-hdr">
-          <span class="chip ${SC[s.sup]||'s-cbc'} sc-name">${s.sup}</span>
+          <span class="chip ${SC[s.sup]||'s-cbc'}">${s.sup}</span>
           <span class="sc-addr">${cl(s.addr)||'—'}</span>
           <span class="${sqc}">${s.qty} шт</span>
         </div>
@@ -236,7 +274,7 @@ function search(){
         <div class="r-bot">
           <div class="sup-chips">${chips}</div>
           <span class="${qc}">${totQty} шт</span>
-          ${minP?`<span class="min-price">от ${fmt(minP)}</span>`:''}
+          ${mp<Infinity?`<span class="min-price">от ${fmt(mp)}</span>`:''}
         </div>
       </div>
       <div class="detail" id="d${i}">
